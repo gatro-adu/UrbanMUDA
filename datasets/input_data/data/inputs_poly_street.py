@@ -1,0 +1,3 @@
+orders=['Station 2x heavy machine gun nests of the Blue Army at the corners of the intersection of West 33rd Street and Broadway,while deploying 7x anti-aircraft guns of the Red Army in a circular formation around the 34th Street–Herald Square station.',
+ 'Deploy 7x infantry fighting vehicles of the Blue Army in a linear formation along West 34th Street,facing east,while stationing 2x heavy machine gun nests of the Red Army at the corners of the intersection of West 33rd Street and Broadway.',
+ "'Deploy 5x Riflemen of the Red Army in a triangular formation near the entrance of the Empire State Building, while stationing 3x Infantry Fighting Vehicles of the Blue Army in a linear formation along West 34th Street, facing east.'"]

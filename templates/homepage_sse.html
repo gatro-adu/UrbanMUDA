@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>实时输出展示</title>
+    </head>
+    <body>
+        <h2>实时信息输出：</h2>
+        <div id="log"></div>
+        <script type="text/javascript">
+            const es = new EventSource("/sse");
+            es.onmessage = e => {
+                const div = document.getElementById("log");
+                const p = document.createElement("p");
+                p.innerHTML = e.data.replace(/temp/g, "<br>");
+                console.log(JSON.stringify(e.data));
+                console.log(JSON.stringify(p.innerHTML));
+                div.appendChild(p);
+            };
+        </script>
+    </body>
+</html>

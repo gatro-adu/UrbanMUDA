@@ -1,0 +1,164 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+#page-container {
+    display: flex;          /* 使用 Flex 弹性布局（子元素自动成为 Flex Item） */
+    height: 100vh;         /* 高度撑满整个视口（Viewport Height） */
+    min-width: 800px;      /* 最小宽度 800px（防止内容过窄导致布局错乱） */
+    overflow: hidden;      /* 关键：禁止父容器滚动 */
+}
+
+#chat-panel {
+    width: 55%;
+    border-right: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#tasks-container {
+    width: 45%;             /* 容器宽度为父元素的40% */
+    padding: 10px;            /* 内边距为10px（上下左右） */
+    overflow-y: auto;         /* 内容溢出时显示垂直滚动条 */
+    display: flex;            /* 启用Flex布局 */
+    flex-direction: column;   /* 子元素垂直排列（从上到下） */
+    gap: 10px;               /* 子元素之间的间距为10px */
+
+    align-items: flex-start; /* 子元素顶部对齐 */
+    flex-shrink: 0; /* 防止子项被压缩 */
+    height: 100vh; /* 或者设置固定高度 */
+    min-height: 0; /* 修复Flex容器的滚动问题 */
+}
+
+#chat-history {
+    padding: 10px;
+    overflow-y: auto;
+    flex: 1;
+    background-color: #f9f9f9;
+}
+
+#chat-input-area {
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+    padding: 10px;
+    background: #fff;
+    border-top: 1px solid #ddd;
+}
+
+#chat-input {
+    flex: 1;
+    resize: vertical;
+    padding: 12px;
+    font-size: 14px;
+    min-height: 60px;
+    max-height: 150px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#send-button {
+    padding: 10px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    min-width: 80px;
+    align-self: flex-end;
+}
+
+#send-button:hover {
+    background-color: #45a049;
+}
+
+.chat-message {
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.chat-message.user {
+    justify-content: flex-end;
+}
+
+.chat-message.system {
+    justify-content: flex-start;
+}
+
+.message-bubble {
+    max-width: 70%;
+    padding: 10px 14px;
+    border-radius: 16px;
+    font-size: 14px;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.chat-message.user .message-bubble {
+    background-color: #dcf8c6;
+    color: #000;
+    border-top-right-radius: 0;
+}
+
+.chat-message.system .message-bubble {
+    background-color: #f1f0f0;
+    color: #000;
+    border-top-left-radius: 0;
+}
+
+.task-box {
+    width: 100%;                /* 宽度占满父容器100% */
+    height: 500px;              /* 固定高度为300像素 */
+    flex-shrink: 0; /* 防止被压缩 */
+    border: 1px solid #ddd;     /* 1像素浅灰色实线边框 */
+    border-radius: 4px;         /* 4像素圆角边框 */
+    padding: 0;                 /* 清除内边距（内容紧贴边框） */
+    box-sizing: border-box;     /* 盒模型计算包含边框和内边距（width/height包含border和padding） */
+    overflow: auto;             /* 内容超出时显示滚动条（自动判断显示横向/纵向） */
+    background-color: #f8f8f8;  /* 浅灰色背景 */
+    position: relative;         /* 设置为相对定位（作为子元素的定位基准） */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* 底部轻微阴影效果（X偏移0，Y偏移1px，3px模糊，10%透明度黑色） */
+}
+
+.task-header {
+    position: sticky;
+    top: 0;
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 12px;
+    font-weight: bold;
+    border-bottom: 1px solid #3d8b40;
+    z-index: 1;
+}
+
+pre {
+    margin: 0;                  /* 清除元素外边距（四周无额外间距） */
+    padding: 10px;              /* 设置内边距为10像素（内容与边框的距离） */
+    white-space: pre-wrap;      /* 保留空白符但自动换行（保留代码格式同时适应容器宽度） */
+    word-break: break-word;     /* 允许在单词内断行（防止长单词/URL导致溢出） */
+    font-size: 13px;            /* 固定字体大小为13像素 */
+}
+
+.task-status {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.status-running {
+    color: #FFC107;
+}
+
+.status-done {
+    color: #4CAF50;
+}
+

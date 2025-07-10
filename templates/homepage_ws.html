@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>任务监控</title>
+  <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="icon" href="/static/favicon.ico" />
+</head>
+
+<body>
+  <div id="page-container">
+    <!-- 左侧聊天区 -->
+    <div id="chat-panel">
+      <div id="chat-history"></div>
+      <div id="chat-input-area">
+        <textarea id="chat-input" rows="3"
+          placeholder="在杨梅分局西侧10米部署红方两架四旋翼无人机; 然后在龙龟西南侧呈正三角队形部署蓝军3辆155mm自行火炮"></textarea>
+        <button id="send-button" onclick="sendChatCommand()">发送</button>
+        <textarea id="config" name="config" placeholder="配置参数"></textarea>
+      </div>
+    </div>
+
+    <!-- 右侧任务区 -->
+    <div id="tasks-container"></div>
+  </div>
+
+  <script src="../static/scripts/script.js"></script>
+</body>
+
+</html>

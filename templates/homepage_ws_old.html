@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>任务监控</title>
+  <style>
+    #tasks-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .task-box {
+      width: 48%;
+      height: 300px;
+      border: 1px solid black;
+      padding: 0;
+      box-sizing: border-box;
+      overflow: auto;
+      background-color: #f8f8f8;
+      position: relative;
+    }
+
+    .task-header {
+      position: sticky;
+      top: 0;
+      background-color: #ddd;
+      padding: 6px;
+      font-weight: bold;
+      border-bottom: 1px solid #aaa;
+      z-index: 1;
+    }
+
+    pre {
+      margin: 0;
+      padding: 10px;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="startNewTask()">创建新任务</button>
+  <div id="tasks-container"></div>
+  
+  <script>
+    // 存储所有WebSocket连接的字典
+    const wsConnections = {};
+    // 存储已创建的任务框，避免重复创建
+    const createdTasks = new Set();
+
+    async function startNewTask() {
+      const inputData = {
+        "order_list": [
+          "在杨梅分局西侧10米部署红方两架四旋翼无人机; 然后在龙龟西南侧呈正三角队形部署蓝军3辆155mm自行火炮"
+        ],
+        "configs": [],
+        "agent": "agent_main"
+      };
+
+      const res = await fetch('/run_test_agent', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(inputData)
+      });
+
+      const data = await res.json();
+
+      createTaskWindow(data.task_id, data.task_name);  // 先建立一个入口连接，用于监听动态生成的子任务id，然后根据子任务id创建子任务框
+    }
+
+    function createTaskWindow(taskId, taskName) {
+      const container = document.getElementById('tasks-container');
+      const taskDiv = document.createElement('div');
+      taskDiv.className = 'task-box';
+      taskDiv.id = taskId;
+
+      taskDiv.innerHTML = `
+        <div class="task-header">任务 ${taskName}</div>
+        <pre id="output-${taskId}"></pre>
+      `;
+
+      container.appendChild(taskDiv);
+
+      // const output = document.getElementById(`output-${taskId}`);   //任务框内容跟随任务id
+      const output = taskDiv.querySelector('pre');   // 任务框内容跟随任务框
+
+      let autoScroll = true;
+      let userScrolledUp = false;
+
+      // 监听滚动事件
+      taskDiv.addEventListener('scroll', function() {
+        // 检查用户是否滚动到底部
+        const isAtBottom = taskDiv.scrollHeight - taskDiv.scrollTop === taskDiv.clientHeight;
+        
+        if (isAtBottom) {
+          // 如果用户滚动到底部，恢复自动滚动
+          autoScroll = true;
+          userScrolledUp = false;
+        } else if (!userScrolledUp && taskDiv.scrollTop < output.scrollHeight - taskDiv.clientHeight) {
+          // 如果用户向上滚动且不是在最底部，暂停自动滚动
+          autoScroll = false;
+          userScrolledUp = true;
+        }
+      });
+
+      const ws = new WebSocket(`ws://${location.host}/ws?task_id=${taskId}&task_name=${taskName}`); // 每次根据taskId创建一个WebSocket连接，这里就是server端
+      wsConnections[taskId] = ws;
+      ws.onmessage = event => {
+        // console.log("event.data:", event.data);
+        try {
+          data_json = JSON.parse(event.data);
+          // console.log("子任务列表:", data_json);
+          if (data_json.type === "init") {
+            
+            // // 递归为每个子任务创建任务框
+            // if (data_json.sub_tasks && Array.isArray(data_json.sub_tasks)) {
+            //   data_json.sub_tasks.forEach(subTaskId => {
+            //     createTaskWindow(subTaskId);
+            //   });
+            // }
+            createTaskWindow(data_json.task_id, data_json.task_name);  // 根据子任务id创建子任务框
+          }
+          else if (data_json.type === "progress") {
+            console.log(`任务 ${data_json.task_name} 进度: ${data_json.progress}%`);
+          }
+          else if (data_json.type === "done") {
+            console.log(`任务 ${data_json.task_name} 完成`);
+          }
+        } catch (e) {}
+
+        // 信息显示
+        if (event.data.includes('❤')) {
+          output.textContent += event.data;
+        }
+        else {
+          output.textContent += event.data.replace(/temp/g, "\n") + '\n';
+        }
+        
+        // 只有在autoScroll为true时才自动滚动
+        if (autoScroll) {
+          taskDiv.scrollTop = taskDiv.scrollHeight;
+        }
+      };
+      
+      ws.onclose = () => {
+        console.log(`WebSocket for task ${taskId} closed`);
+        // 清理资源
+        delete wsConnections[taskId];
+      };
+    }
+  </script>
+</body>
+</html>
