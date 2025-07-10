@@ -468,7 +468,7 @@ class TestAgent:
                     config=config
                 ):
                     state = state_raw['payload']
-                    fileop.save_any_append(state, f'datasets/{self.test_agent.mode}/{graph_name[:5]}.py')
+                    # fileop.save_any_append(state, f'datasets/{self.test_agent.mode}/{graph_name[:5]}.py')
 
                     if not state.get('values', {}).get('messages', []):
                         continue
