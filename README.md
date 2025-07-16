@@ -1,7 +1,7 @@
 ## Quick Start
 Installation
 ```bash
-git clone https://github.com/gatro-adu/coorGen.git
+git clone https://github.com/gatro-adu/UrbanMUDA.git
 cd UrbanMUDA
 conda env create -f environment.yml --prefix .urban
 ```
