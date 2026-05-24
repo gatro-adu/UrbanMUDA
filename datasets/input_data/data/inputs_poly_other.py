@@ -1,0 +1,5 @@
+orders=['Position 4x light tanks of the Red Army in a triangular formation near the entrance of Hotel Stanford,while deploying 6x rocket launchers of the Blue Army in a hexagonal formation around the center of the Empire State Building.',
+ 'Deploy 4x drones of the Red Army in a circular formation around Herald Towers,while stationing 6x riflemen of the Blue Army in a square formation near the entrance of Hotel Stanford.',
+ 'Position 5x riflemen of the Red Army in a square formation near the entrance of Kakaboka,while deploying 3x drones of the Blue Army in a circular formation around the center of Herald Towers.',
+ 'Deploy 6x rocket launchers of the Blue Army in a hexagonal formation around the center of the Empire State Building,while positioning 4x light tanks of the Red Army in a triangular formation near the entrance of Antoya Korean BBQ.',
+ 'Deploy 3x drones of the Blue Army in a circular formation around the center of the Empire State Building,while stationing 5x riflemen of the Red Army in a square formation near the entrance of Kakaboka.']

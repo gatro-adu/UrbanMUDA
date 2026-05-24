@@ -1,0 +1,143 @@
+{
+    "config": {
+        "tags": [], 
+        "metadata": ChainMap({}), 
+        "callbacks": None, 
+        "recursion_limit": 25, 
+        "configurable": {
+            "checkpoint_ns": "", 
+            "thread_id": "dc7f5b9d-4b7e-4029-8a1c-138df1984f7c", 
+            "checkpoint_id": "1f0443ca-af8c-648e-bfff-ea819b4b3646"
+        }
+    }, 
+    "parent_config": None, 
+    "values": {"messages": []}, 
+    "metadata": {
+        "source": "input", 
+        "writes": {"__start__": {"messages": [("user", "正五边形队形，中心点在[121.1489224, 24.9048013]，部署数量5，两两间距30米，其他要求为空")]}}, 
+        "step": -1, 
+        "parents": {}
+    }, 
+    "next": ["__start__"], 
+    "tasks": [{"id": "c4e24f80-d687-1880-b68f-f9b9308136b8", "name": "__start__", "interrupts": (), "state": None}]
+}
+{
+    "config": {
+        "tags": [], 
+        "metadata": ChainMap({}), 
+        "callbacks": None, 
+        "recursion_limit": 25, 
+        "configurable": {
+            "checkpoint_ns": "", 
+            "thread_id": "dc7f5b9d-4b7e-4029-8a1c-138df1984f7c", 
+            "checkpoint_id": "1f0443ca-af90-6c6e-8000-94147baa7fe0"
+        }
+    }, 
+    "parent_config": {
+        "tags": [], 
+        "metadata": ChainMap({}), 
+        "callbacks": None, 
+        "recursion_limit": 25, 
+        "configurable": {
+            "checkpoint_ns": "", 
+            "thread_id": "dc7f5b9d-4b7e-4029-8a1c-138df1984f7c", 
+            "checkpoint_id": "1f0443ca-af8c-648e-bfff-ea819b4b3646"
+        }
+    }, 
+    "values": {
+        "messages": [HumanMessage(content="正五边形队形，中心点在[121.1489224, 24.9048013]，部署数量5，两两间距30米，其他要求为空", additional_kwargs={}, response_metadata={}, id="a3a08053-fe19-4496-9ab9-1e7be980185d")]
+    }, 
+    "metadata": {"source": "loop", "writes": None, "step": 0, "parents": {}}, 
+    "next": ["agent"], 
+    "tasks": [{"id": "fa1aa32c-840a-23ea-c5da-c4b305e42ccf", "name": "agent", "interrupts": (), "state": None}]
+}
+{
+    "id": "fa1aa32c-840a-23ea-c5da-c4b305e42ccf", 
+    "name": "agent", 
+    "input": {
+        "messages": [HumanMessage(content="正五边形队形，中心点在[121.1489224, 24.9048013]，部署数量5，两两间距30米，其他要求为空", additional_kwargs={}, response_metadata={}, id="a3a08053-fe19-4496-9ab9-1e7be980185d")]
+    }, 
+    "triggers": ("branch:to:agent",)
+}
+{
+    "id": "fa1aa32c-840a-23ea-c5da-c4b305e42ccf", 
+    "name": "agent", 
+    "error": None, 
+    "result": [
+        (
+            "messages", 
+            [
+                AIMessage(content="", additional_kwargs={"tool_calls": [{"id": "chatcmpl-6iWw0nGaMZ7J9L4HDwjLOop6zegLF", "function": {"arguments": "{"coord":[121.1489224,24.9048013],"d":30,"n":5}", "name": "formation_polygon"}, "type": "function"}], "refusal": None}, response_metadata={"token_usage": {"completion_tokens": 34, "prompt_tokens": 274, "total_tokens": 308, "completion_tokens_details": {"accepted_prediction_tokens": 0, "audio_tokens": 0, "reasoning_tokens": 0, "rejected_prediction_tokens": 0}, "prompt_tokens_details": {"audio_tokens": 0, "cached_tokens": 0}}, "model_name": "gpt-4o-mini", "system_fingerprint": "fp_7a53abb7a2", "id": "chatcmpl-6iWw0nGaMZ7J9L4HDwjLOop6zegLF", "service_tier": None, "finish_reason": "tool_calls", "logprobs": None}, id="run--3e202e18-9e9a-4fb0-8d5c-fc89d5e893a2-0", tool_calls=[{"name": "formation_polygon", "args": {"coord": [121.1489224, 24.9048013], "d": 30, "n": 5}, "id": "chatcmpl-6iWw0nGaMZ7J9L4HDwjLOop6zegLF", "type": "tool_call"}], usage_metadata={"input_tokens": 274, "output_tokens": 34, "total_tokens": 308, "input_token_details": {"audio": 0, "cache_read": 0}, "output_token_details": {"audio": 0, "reasoning": 0}})
+            ]
+        )
+    ], 
+    "interrupts": []
+}
+{
+    "config": {
+        "tags": [], 
+        "metadata": ChainMap({}), 
+        "callbacks": None, 
+        "recursion_limit": 25, 
+        "configurable": {
+            "checkpoint_ns": "", 
+            "thread_id": "dc7f5b9d-4b7e-4029-8a1c-138df1984f7c", 
+            "checkpoint_id": "1f0443ca-dba8-67bf-8001-30f15d59c370"
+        }
+    }, 
+    "parent_config": {
+        "tags": [], 
+        "metadata": ChainMap({}), 
+        "callbacks": None, 
+        "recursion_limit": 25, 
+        "configurable": {
+            "checkpoint_ns": "", 
+            "thread_id": "dc7f5b9d-4b7e-4029-8a1c-138df1984f7c", 
+            "checkpoint_id": "1f0443ca-af90-6c6e-8000-94147baa7fe0"
+        }
+    }, 
+    "values": {
+        "messages": [
+            HumanMessage(content="正五边形队形，中心点在[121.1489224, 24.9048013]，部署数量5，两两间距30米，其他要求为空", additional_kwargs={}, response_metadata={}, id="a3a08053-fe19-4496-9ab9-1e7be980185d"), 
+            AIMessage(content="", additional_kwargs={"tool_calls": [{"id": "chatcmpl-6iWw0nGaMZ7J9L4HDwjLOop6zegLF", "function": {"arguments": "{"coord":[121.1489224,24.9048013],"d":30,"n":5}", "name": "formation_polygon"}, "type": "function"}], "refusal": None}, response_metadata={"token_usage": {"completion_tokens": 34, "prompt_tokens": 274, "total_tokens": 308, "completion_tokens_details": {"accepted_prediction_tokens": 0, "audio_tokens": 0, "reasoning_tokens": 0, "rejected_prediction_tokens": 0}, "prompt_tokens_details": {"audio_tokens": 0, "cached_tokens": 0}}, "model_name": "gpt-4o-mini", "system_fingerprint": "fp_7a53abb7a2", "id": "chatcmpl-6iWw0nGaMZ7J9L4HDwjLOop6zegLF", "service_tier": None, "finish_reason": "tool_calls", "logprobs": None}, id="run--3e202e18-9e9a-4fb0-8d5c-fc89d5e893a2-0", tool_calls=[{"name": "formation_polygon", "args": {"coord": [121.1489224, 24.9048013], "d": 30, "n": 5}, "id": "chatcmpl-6iWw0nGaMZ7J9L4HDwjLOop6zegLF", "type": "tool_call"}], usage_metadata={"input_tokens": 274, "output_tokens": 34, "total_tokens": 308, "input_token_details": {"audio": 0, "cache_read": 0}, "output_token_details": {"audio": 0, "reasoning": 0}})
+        ]
+    }, 
+    "metadata": {
+        "source": "loop", 
+        "writes": {
+            "agent": {
+                "messages": [AIMessage(content="", additional_kwargs={"tool_calls": [{"id": "chatcmpl-6iWw0nGaMZ7J9L4HDwjLOop6zegLF", "function": {"arguments": "{"coord":[121.1489224,24.9048013],"d":30,"n":5}", "name": "formation_polygon"}, "type": "function"}], "refusal": None}, response_metadata={"token_usage": {"completion_tokens": 34, "prompt_tokens": 274, "total_tokens": 308, "completion_tokens_details": {"accepted_prediction_tokens": 0, "audio_tokens": 0, "reasoning_tokens": 0, "rejected_prediction_tokens": 0}, "prompt_tokens_details": {"audio_tokens": 0, "cached_tokens": 0}}, "model_name": "gpt-4o-mini", "system_fingerprint": "fp_7a53abb7a2", "id": "chatcmpl-6iWw0nGaMZ7J9L4HDwjLOop6zegLF", "service_tier": None, "finish_reason": "tool_calls", "logprobs": None}, id="run--3e202e18-9e9a-4fb0-8d5c-fc89d5e893a2-0", tool_calls=[{"name": "formation_polygon", "args": {"coord": [121.1489224, 24.9048013], "d": 30, "n": 5}, "id": "chatcmpl-6iWw0nGaMZ7J9L4HDwjLOop6zegLF", "type": "tool_call"}], usage_metadata={"input_tokens": 274, "output_tokens": 34, "total_tokens": 308, "input_token_details": {"audio": 0, "cache_read": 0}, "output_token_details": {"audio": 0, "reasoning": 0}})]
+            }
+        }, 
+        "step": 1, 
+        "parents": {}
+    }, 
+    "next": ["tools"], 
+    "tasks": [{"id": "36d2f8b2-6232-679d-6efc-e881182a737d", "name": "tools", "interrupts": (), "state": None}]
+}
+{
+    "id": "36d2f8b2-6232-679d-6efc-e881182a737d", 
+    "name": "tools", 
+    "input": {
+        "messages": [
+            HumanMessage(content="正五边形队形，中心点在[121.1489224, 24.9048013]，部署数量5，两两间距30米，其他要求为空", additional_kwargs={}, response_metadata={}, id="a3a08053-fe19-4496-9ab9-1e7be980185d"), 
+            AIMessage(content="", additional_kwargs={"tool_calls": [{"id": "chatcmpl-6iWw0nGaMZ7J9L4HDwjLOop6zegLF", "function": {"arguments": "{"coord":[121.1489224,24.9048013],"d":30,"n":5}", "name": "formation_polygon"}, "type": "function"}], "refusal": None}, response_metadata={"token_usage": {"completion_tokens": 34, "prompt_tokens": 274, "total_tokens": 308, "completion_tokens_details": {"accepted_prediction_tokens": 0, "audio_tokens": 0, "reasoning_tokens": 0, "rejected_prediction_tokens": 0}, "prompt_tokens_details": {"audio_tokens": 0, "cached_tokens": 0}}, "model_name": "gpt-4o-mini", "system_fingerprint": "fp_7a53abb7a2", "id": "chatcmpl-6iWw0nGaMZ7J9L4HDwjLOop6zegLF", "service_tier": None, "finish_reason": "tool_calls", "logprobs": None}, id="run--3e202e18-9e9a-4fb0-8d5c-fc89d5e893a2-0", tool_calls=[{"name": "formation_polygon", "args": {"coord": [121.1489224, 24.9048013], "d": 30, "n": 5}, "id": "chatcmpl-6iWw0nGaMZ7J9L4HDwjLOop6zegLF", "type": "tool_call"}], usage_metadata={"input_tokens": 274, "output_tokens": 34, "total_tokens": 308, "input_token_details": {"audio": 0, "cache_read": 0}, "output_token_details": {"audio": 0, "reasoning": 0}})
+        ]
+    }, 
+    "triggers": ("branch:to:tools",)
+}
+{"id": "36d2f8b2-6232-679d-6efc-e881182a737d", "name": "tools", "error": None, "result": [("messages", [ToolMessage(content="=== 获得正5边形下各兵力实体坐标 ===\n[121.1489224, 24.905031679931874]\n[121.14916263624524, 24.904872491121434]\n[121.1490708738567, 24.90461491864086]\n[121.1487739261433, 24.90461491864086]\n[121.14868216375477, 24.904872491121434]", name="formation_polygon", tool_call_id="chatcmpl-6iWw0nGaMZ7J9L4HDwjLOop6zegLF")])], "interrupts": []}
+{"config": {"tags": [], "metadata": ChainMap({}), "callbacks": None, "recursion_limit": 25, "configurable": {"checkpoint_ns": "", "thread_id": "dc7f5b9d-4b7e-4029-8a1c-138df1984f7c", "checkpoint_id": "1f0443ca-dbb8-6380-8002-3230cb1a0873"}}, "parent_config": {"tags": [], "metadata": ChainMap({}), "callbacks": None, "recursion_limit": 25, "configurable": {"checkpoint_ns": "", "thread_id": "dc7f5b9d-4b7e-4029-8a1c-138df1984f7c", "checkpoint_id": "1f0443ca-dba8-67bf-8001-30f15d59c370"}}, "values": {"messages": [HumanMessage(content="正五边形队形，中心点在[121.1489224, 24.9048013]，部署数量5，两两间距30米，其他要求为空", additional_kwargs={}, response_metadata={}, id="a3a08053-fe19-4496-9ab9-1e7be980185d"), AIMessage(content="", additional_kwargs={"tool_calls": [{"id": "chatcmpl-6iWw0nGaMZ7J9L4HDwjLOop6zegLF", "function": {"arguments": "{"coord":[121.1489224,24.9048013],"d":30,"n":5}", "name": "formation_polygon"}, "type": "function"}], "refusal": None}, response_metadata={"token_usage": {"completion_tokens": 34, "prompt_tokens": 274, "total_tokens": 308, "completion_tokens_details": {"accepted_prediction_tokens": 0, "audio_tokens": 0, "reasoning_tokens": 0, "rejected_prediction_tokens": 0}, "prompt_tokens_details": {"audio_tokens": 0, "cached_tokens": 0}}, "model_name": "gpt-4o-mini", "system_fingerprint": "fp_7a53abb7a2", "id": "chatcmpl-6iWw0nGaMZ7J9L4HDwjLOop6zegLF", "service_tier": None, "finish_reason": "tool_calls", "logprobs": None}, id="run--3e202e18-9e9a-4fb0-8d5c-fc89d5e893a2-0", tool_calls=[{"name": "formation_polygon", "args": {"coord": [121.1489224, 24.9048013], "d": 30, "n": 5}, "id": "chatcmpl-6iWw0nGaMZ7J9L4HDwjLOop6zegLF", "type": "tool_call"}], usage_metadata={"input_tokens": 274, "output_tokens": 34, "total_tokens": 308, "input_token_details": {"audio": 0, "cache_read": 0}, "output_token_details": {"audio": 0, "reasoning": 0}}), ToolMessage(content="=== 获得正5边形下各兵力实体坐标 ===\n[121.1489224, 24.905031679931874]\n[121.14916263624524, 24.904872491121434]\n[121.1490708738567, 24.90461491864086]\n[121.1487739261433, 24.90461491864086]\n[121.14868216375477, 24.904872491121434]", name="formation_polygon", id="cc52f40f-657d-41e6-8742-d458bcd388e1", tool_call_id="chatcmpl-6iWw0nGaMZ7J9L4HDwjLOop6zegLF")]}, "metadata": {"source": "loop", "writes": {"tools": {"messages": [ToolMessage(content="=== 获得正5边形下各兵力实体坐标 ===\n[121.1489224, 24.905031679931874]\n[121.14916263624524, 24.904872491121434]\n[121.1490708738567, 24.90461491864086]\n[121.1487739261433, 24.90461491864086]\n[121.14868216375477, 24.904872491121434]", name="formation_polygon", id="cc52f40f-657d-41e6-8742-d458bcd388e1", tool_call_id="chatcmpl-6iWw0nGaMZ7J9L4HDwjLOop6zegLF")]}}, "step": 2, "parents": {}}, "next": ["agent"], "tasks": [{"id": "6d85e17a-c086-bb73-e9ed-f13b60fc05b7", "name": "agent", "interrupts": (), "state": None}]}
+{"id": "6d85e17a-c086-bb73-e9ed-f13b60fc05b7", "name": "agent", "input": {"messages": [HumanMessage(content="正五边形队形，中心点在[121.1489224, 24.9048013]，部署数量5，两两间距30米，其他要求为空", additional_kwargs={}, response_metadata={}, id="a3a08053-fe19-4496-9ab9-1e7be980185d"), AIMessage(content="", additional_kwargs={"tool_calls": [{"id": "chatcmpl-6iWw0nGaMZ7J9L4HDwjLOop6zegLF", "function": {"arguments": "{"coord":[121.1489224,24.9048013],"d":30,"n":5}", "name": "formation_polygon"}, "type": "function"}], "refusal": None}, response_metadata={"token_usage": {"completion_tokens": 34, "prompt_tokens": 274, "total_tokens": 308, "completion_tokens_details": {"accepted_prediction_tokens": 0, "audio_tokens": 0, "reasoning_tokens": 0, "rejected_prediction_tokens": 0}, "prompt_tokens_details": {"audio_tokens": 0, "cached_tokens": 0}}, "model_name": "gpt-4o-mini", "system_fingerprint": "fp_7a53abb7a2", "id": "chatcmpl-6iWw0nGaMZ7J9L4HDwjLOop6zegLF", "service_tier": None, "finish_reason": "tool_calls", "logprobs": None}, id="run--3e202e18-9e9a-4fb0-8d5c-fc89d5e893a2-0", tool_calls=[{"name": "formation_polygon", "args": {"coord": [121.1489224, 24.9048013], "d": 30, "n": 5}, "id": "chatcmpl-6iWw0nGaMZ7J9L4HDwjLOop6zegLF", "type": "tool_call"}], usage_metadata={"input_tokens": 274, "output_tokens": 34, "total_tokens": 308, "input_token_details": {"audio": 0, "cache_read": 0}, "output_token_details": {"audio": 0, "reasoning": 0}}), ToolMessage(content="=== 获得正5边形下各兵力实体坐标 ===\n[121.1489224, 24.905031679931874]\n[121.14916263624524, 24.904872491121434]\n[121.1490708738567, 24.90461491864086]\n[121.1487739261433, 24.90461491864086]\n[121.14868216375477, 24.904872491121434]", name="formation_polygon", id="cc52f40f-657d-41e6-8742-d458bcd388e1", tool_call_id="chatcmpl-6iWw0nGaMZ7J9L4HDwjLOop6zegLF")]}, "triggers": ("branch:to:agent",)}
+{"id": "6d85e17a-c086-bb73-e9ed-f13b60fc05b7", "name": "agent", "error": None, "result": [("messages", [AIMessage(content="", additional_kwargs={"tool_calls": [{"id": "chatcmpl-YPk0jrd4mzbuqn0MzHB81tTUa2Y9t", "function": {"arguments": "{"output":"=== 正五边形队形各兵力实体坐标 ===\\n1. [121.1489224, 24.905031679931874]\\n2. [121.14916263624524, 24.904872491121434]\\n3. [121.1490708738567, 24.90461491864086]\\n4. [121.1487739261433, 24.90461491864086]\\n5. [121.14868216375477, 24.904872491121434]"}", "name": "structure"}, "type": "function"}], "refusal": None}, response_metadata={"token_usage": {"completion_tokens": 131, "prompt_tokens": 875, "total_tokens": 1006, "completion_tokens_details": {"accepted_prediction_tokens": 0, "audio_tokens": 0, "reasoning_tokens": 0, "rejected_prediction_tokens": 0}, "prompt_tokens_details": {"audio_tokens": 0, "cached_tokens": 0}}, "model_name": "gpt-4o-mini", "system_fingerprint": "fp_7a53abb7a2", "id": "chatcmpl-YPk0jrd4mzbuqn0MzHB81tTUa2Y9t", "service_tier": None, "finish_reason": "tool_calls", "logprobs": None}, id="run--d2a9c232-f9d8-45b9-a74d-c6346e61a420-0", tool_calls=[{"name": "structure", "args": {"output": "=== 正五边形队形各兵力实体坐标 ===\n1. [121.1489224, 24.905031679931874]\n2. [121.14916263624524, 24.904872491121434]\n3. [121.1490708738567, 24.90461491864086]\n4. [121.1487739261433, 24.90461491864086]\n5. [121.14868216375477, 24.904872491121434]"}, "id": "chatcmpl-YPk0jrd4mzbuqn0MzHB81tTUa2Y9t", "type": "tool_call"}], usage_metadata={"input_tokens": 875, "output_tokens": 131, "total_tokens": 1006, "input_token_details": {"audio": 0, "cache_read": 0}, "output_token_details": {"audio": 0, "reasoning": 0}})]), ("final_response", ["=== 正五边形队形各兵力实体坐标 ===\n1. [121.1489224, 24.905031679931874]\n2. [121.14916263624524, 24.904872491121434]\n3. [121.1490708738567, 24.90461491864086]\n4. [121.1487739261433, 24.90461491864086]\n5. [121.14868216375477, 24.904872491121434]"])], "interrupts": []}
+{
+    "config": {"tags": [], "metadata": ChainMap({}), "callbacks": None, "recursion_limit": 25, "configurable": {"checkpoint_ns": "", "thread_id": "dc7f5b9d-4b7e-4029-8a1c-138df1984f7c", "checkpoint_id": "1f0443cb-2984-69a5-8003-75fb0d3ce437"}}, 
+    "parent_config": {"tags": [], "metadata": ChainMap({}), "callbacks": None, "recursion_limit": 25, "configurable": {"checkpoint_ns": "", "thread_id": "dc7f5b9d-4b7e-4029-8a1c-138df1984f7c", "checkpoint_id": "1f0443ca-dbb8-6380-8002-3230cb1a0873"}}, 
+    "values": {"messages": [HumanMessage(content="正五边形队形，中心点在[121.1489224, 24.9048013]，部署数量5，两两间距30米，其他要求为空", additional_kwargs={}, response_metadata={}, id="a3a08053-fe19-4496-9ab9-1e7be980185d"), AIMessage(content="", additional_kwargs={"tool_calls": [{"id": "chatcmpl-6iWw0nGaMZ7J9L4HDwjLOop6zegLF", "function": {"arguments": "{"coord":[121.1489224,24.9048013],"d":30,"n":5}", "name": "formation_polygon"}, "type": "function"}], "refusal": None}, response_metadata={"token_usage": {"completion_tokens": 34, "prompt_tokens": 274, "total_tokens": 308, "completion_tokens_details": {"accepted_prediction_tokens": 0, "audio_tokens": 0, "reasoning_tokens": 0, "rejected_prediction_tokens": 0}, "prompt_tokens_details": {"audio_tokens": 0, "cached_tokens": 0}}, "model_name": "gpt-4o-mini", "system_fingerprint": "fp_7a53abb7a2", "id": "chatcmpl-6iWw0nGaMZ7J9L4HDwjLOop6zegLF", "service_tier": None, "finish_reason": "tool_calls", "logprobs": None}, id="run--3e202e18-9e9a-4fb0-8d5c-fc89d5e893a2-0", tool_calls=[{"name": "formation_polygon", "args": {"coord": [121.1489224, 24.9048013], "d": 30, "n": 5}, "id": "chatcmpl-6iWw0nGaMZ7J9L4HDwjLOop6zegLF", "type": "tool_call"}], usage_metadata={"input_tokens": 274, "output_tokens": 34, "total_tokens": 308, "input_token_details": {"audio": 0, "cache_read": 0}, "output_token_details": {"audio": 0, "reasoning": 0}}), ToolMessage(content="=== 获得正5边形下各兵力实体坐标 ===\n[121.1489224, 24.905031679931874]\n[121.14916263624524, 24.904872491121434]\n[121.1490708738567, 24.90461491864086]\n[121.1487739261433, 24.90461491864086]\n[121.14868216375477, 24.904872491121434]", name="formation_polygon", id="cc52f40f-657d-41e6-8742-d458bcd388e1", tool_call_id="chatcmpl-6iWw0nGaMZ7J9L4HDwjLOop6zegLF"), AIMessage(content="", additional_kwargs={"tool_calls": [{"id": "chatcmpl-YPk0jrd4mzbuqn0MzHB81tTUa2Y9t", "function": {"arguments": "{"output":"=== 正五边形队形各兵力实体坐标 ===\\n1. [121.1489224, 24.905031679931874]\\n2. [121.14916263624524, 24.904872491121434]\\n3. [121.1490708738567, 24.90461491864086]\\n4. [121.1487739261433, 24.90461491864086]\\n5. [121.14868216375477, 24.904872491121434]"}", "name": "structure"}, "type": "function"}], "refusal": None}, response_metadata={"token_usage": {"completion_tokens": 131, "prompt_tokens": 875, "total_tokens": 1006, "completion_tokens_details": {"accepted_prediction_tokens": 0, "audio_tokens": 0, "reasoning_tokens": 0, "rejected_prediction_tokens": 0}, "prompt_tokens_details": {"audio_tokens": 0, "cached_tokens": 0}}, "model_name": "gpt-4o-mini", "system_fingerprint": "fp_7a53abb7a2", "id": "chatcmpl-YPk0jrd4mzbuqn0MzHB81tTUa2Y9t", "service_tier": None, "finish_reason": "tool_calls", "logprobs": None}, id="run--d2a9c232-f9d8-45b9-a74d-c6346e61a420-0", tool_calls=[{"name": "structure", "args": {"output": "=== 正五边形队形各兵力实体坐标 ===\n1. [121.1489224, 24.905031679931874]\n2. [121.14916263624524, 24.904872491121434]\n3. [121.1490708738567, 24.90461491864086]\n4. [121.1487739261433, 24.90461491864086]\n5. [121.14868216375477, 24.904872491121434]"}, "id": "chatcmpl-YPk0jrd4mzbuqn0MzHB81tTUa2Y9t", "type": "tool_call"}], usage_metadata={"input_tokens": 875, "output_tokens": 131, "total_tokens": 1006, "input_token_details": {"audio": 0, "cache_read": 0}, "output_token_details": {"audio": 0, "reasoning": 0}})], "final_response": ["=== 正五边形队形各兵力实体坐标 ===\n1. [121.1489224, 24.905031679931874]\n2. [121.14916263624524, 24.904872491121434]\n3. [121.1490708738567, 24.90461491864086]\n4. [121.1487739261433, 24.90461491864086]\n5. [121.14868216375477, 24.904872491121434]"]}, 
+    "metadata": {
+        "source": "loop", 
+        "writes": {"agent": {"messages": [AIMessage(content="", additional_kwargs={"tool_calls": [{"id": "chatcmpl-YPk0jrd4mzbuqn0MzHB81tTUa2Y9t", "function": {"arguments": "{"output":"=== 正五边形队形各兵力实体坐标 ===\\n1. [121.1489224, 24.905031679931874]\\n2. [121.14916263624524, 24.904872491121434]\\n3. [121.1490708738567, 24.90461491864086]\\n4. [121.1487739261433, 24.90461491864086]\\n5. [121.14868216375477, 24.904872491121434]"}", "name": "structure"}, "type": "function"}], "refusal": None}, response_metadata={"token_usage": {"completion_tokens": 131, "prompt_tokens": 875, "total_tokens": 1006, "completion_tokens_details": {"accepted_prediction_tokens": 0, "audio_tokens": 0, "reasoning_tokens": 0, "rejected_prediction_tokens": 0}, "prompt_tokens_details": {"audio_tokens": 0, "cached_tokens": 0}}, "model_name": "gpt-4o-mini", "system_fingerprint": "fp_7a53abb7a2", "id": "chatcmpl-YPk0jrd4mzbuqn0MzHB81tTUa2Y9t", "service_tier": None, "finish_reason": "tool_calls", "logprobs": None}, id="run--d2a9c232-f9d8-45b9-a74d-c6346e61a420-0", tool_calls=[{"name": "structure", "args": {"output": "=== 正五边形队形各兵力实体坐标 ===\n1. [121.1489224, 24.905031679931874]\n2. [121.14916263624524, 24.904872491121434]\n3. [121.1490708738567, 24.90461491864086]\n4. [121.1487739261433, 24.90461491864086]\n5. [121.14868216375477, 24.904872491121434]"}, "id": "chatcmpl-YPk0jrd4mzbuqn0MzHB81tTUa2Y9t", "type": "tool_call"}], usage_metadata={"input_tokens": 875, "output_tokens": 131, "total_tokens": 1006, "input_token_details": {"audio": 0, "cache_read": 0}, 
+    "output_token_details": {"audio": 0, "reasoning": 0}})
+    ], "final_response": ["=== 正五边形队形各兵力实体坐标 ===\n1. [121.1489224, 24.905031679931874]\n2. [121.14916263624524, 24.904872491121434]\n3. [121.1490708738567, 24.90461491864086]\n4. [121.1487739261433, 24.90461491864086]\n5. [121.14868216375477, 24.904872491121434]"]}}, "step": 3, "parents": {}}, 
+    "next": [], "tasks": []
+}

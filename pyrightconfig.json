@@ -1,0 +1,13 @@
+{
+    "include": [
+        "**/*.py",
+        "**/*.ipynb",
+    ],
+    "exclude": [
+        "**/node_modules",
+        ".git"
+    ],
+    "reportArgumentType": "none",
+    "reportReturnType": "none",
+    "reportOperatorIssue": "none"
+}

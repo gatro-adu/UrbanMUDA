@@ -1,0 +1,186 @@
+{
+    "8": {
+        "equip_name": "通用类型",
+        "equip_available_behavior_list": [
+            {
+                "behavior_id": "831",
+                "behavior_name": "移动到路点发现目标开火",
+                "parameters": {
+                    "InterestPoints": {"description": "路点（兴趣点）坐标", "example": [121.14359, 24.90602]},
+                    "Speed": {"description": "速度(m/s)", "example": 10}                }
+            },
+            {
+                "behavior_id": "716",
+                "behavior_name": "移动到第一个路点",
+                "parameters": {
+                    "InterestPoints": {"description": "路点（兴趣点）坐标", "example": [121.14359, 24.90602]}
+                }
+            },
+            {
+                "behavior_id": "1154",
+                "behavior_name": "兴趣区内巡逻发现敌人进行攻击",
+                "parameters": {
+                    "AreaPoints": {
+                        "description": "坐标点列表，包含4个经纬坐标，规定巡逻兴趣区域（必须依据输入子任务给出）",
+                        "example": [
+                            [121.14359, 24.90602],
+                            [121.14459, 24.90602],
+                            [121.14459, 24.90502],
+                            [121.14359, 24.90502]
+                        ]
+                    },
+                    "Speed": {"description": "巡逻速度(m/s)", "example": 5}
+                }
+            },
+            {
+                "behavior_id": "986",
+                "behavior_name": "待命",
+                "parameters": {}
+            },
+            {
+                "behavior_id": "718",
+                "behavior_name": "沿导航线前进并朝最近的敌方目标开火",
+                "parameters": {
+                    "SplinePoints": {
+                        "description": "坐标点列表，包含多个顺序的经纬坐标，规定前进的路线",
+                        "example": [
+                            [121.14359, 24.90602],
+                            [121.14389, 24.90602],
+                            [121.14419, 24.90502]
+                        ]
+                    },
+                    "Height": {"description": "高度，单位为厘米，默认使用8000厘米", "example": 8000},
+                    "Speed": {"description": "巡逻速度(m/s)", "example": 5}
+                }
+            },
+            {
+                "behavior_id": "877",
+                "behavior_name": "沿第一条路线移动在200米内发现建筑开火",
+                "parameters": {
+                    "SplinePoints": {
+                        "description": "坐标点列表，包含多个顺序的经纬坐标，规定前进的路线",
+                        "example": [
+                            [121.14359, 24.90602],
+                            [121.14389, 24.90602],
+                            [121.14419, 24.90502]
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    "23": {
+        "equip_name": "航空器",
+        "equip_available_behavior_list": [
+            {
+                "behavior_id": "831",
+                "behavior_name": "移动到路点发现目标开火",
+                "parameters": {
+                    "InterestPoints": {"description": "路点（兴趣点）坐标", "example": [121.14359, 24.90602]},
+                    "Speed": {"description": "速度(m/s)", "example": 10},
+                    "Height": {"description": "高度，单位为厘米，默认使用8000厘米", "example": 8000}
+                }
+            },
+            {
+                "behavior_id": "716",
+                "behavior_name": "移动到第一个路点",
+                "parameters": {
+                    "InterestPoints": {"description": "路点（兴趣点）坐标", "example": [121.14359, 24.90602]},
+                    "Height": {"description": "高度，单位为厘米，默认使用8000厘米", "example": 8000}
+
+                }
+            },
+            {
+                "behavior_id": "1154",
+                "behavior_name": "兴趣区内巡逻发现敌人进行攻击",
+                "parameters": {
+                    "AreaPoints": {
+                        "description": "坐标点列表，包含4个经纬坐标，规定巡逻兴趣区域（必须依据输入子任务给出）",
+                        "example": [
+                            [121.14359, 24.90602],
+                            [121.14459, 24.90602],
+                            [121.14459, 24.90502],
+                            [121.14359, 24.90502]
+                        ]
+                    },
+                    "Height": {"description": "高度，单位为厘米，默认使用8000厘米", "example": 8000},
+                    "Speed": {"description": "巡逻速度(m/s)", "example": 5}
+                }
+            },
+            {
+                "behavior_id": "986",
+                "behavior_name": "待命",
+                "parameters": {}
+            },
+            {
+                "behavior_id": "1150",
+                "behavior_name": "无人机盘旋飞至第一个路径点",
+                "parameters": {
+                    "InterestPoints": {"description": "路点（兴趣点）坐标", "example": [121.14359, 24.90602]},
+                    "Height": {"description": "高度，单位为厘米，默认使用8000厘米", "example": 8000}
+                }
+            }
+        ]
+    },
+    "21": {
+        "equip_name": "军用作战车辆",
+        "equip_available_behavior_list": [
+            {
+                "behavior_id": "1232",
+                "behavior_name": "向兴趣区开火",
+                "parameters": {
+                    "AreaPoints": {
+                        "description": "坐标点列表，包含4个经纬坐标，规定开火目标区域（必须依据输入子任务给出）",
+                        "example": [
+                            [121.14359, 24.90602],
+                            [121.14459, 24.90602],
+                            [121.14459, 24.90502],
+                            [121.14359, 24.90502]
+                        ]
+                    },
+                    "firing_density": {"description": "开火密度，可选[\"high\",\"medium\",\"low\"]", "example": "medium"}
+                }
+            }
+        ]
+    },
+    "351": {
+        "equip_name": "士兵",
+        "equip_available_behavior_list": [
+            {
+                "behavior_id": "956",
+                "behavior_name": "（AZ）步枪手对空防御",
+                "parameters": {
+                    "firing_strategy": {"description": "开火策略，可选[\"normal\",\"aggressive\",\"defensive\"]", "example": "normal"}
+                }
+            },
+            {
+                "behavior_id": "1512",
+                "behavior_name": "(DMX)躲避",
+                "parameters": {
+                    "firing_strategy": {"description": "开火策略，可选[\"normal\",\"aggressive\",\"defensive\"]", "example": "normal"}
+                }
+            }
+        ]
+    },
+    "22": {
+        "equip_name": "火炮",
+        "equip_available_behavior_list": [
+            {
+                "behavior_id": "1232",
+                "behavior_name": "向兴趣区开火",
+                "parameters": {
+                    "AreaPoints": {
+                        "description": "坐标点列表，包含4个经纬坐标，规定开火目标区域（必须依据输入子任务给出）",
+                        "example": [
+                            [121.14359, 24.90602],
+                            [121.14459, 24.90602],
+                            [121.14459, 24.90502],
+                            [121.14359, 24.90502]
+                        ]
+                    },
+                    "firing_density": {"description": "开火密度，可选[\"high\",\"medium\",\"low\"]", "example": "medium"}
+                }
+            }
+        ]
+    }
+}

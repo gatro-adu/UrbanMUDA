@@ -1,0 +1,197 @@
+{
+    "description": "",
+    "name": "Plans",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "blue": {
+          "anyOf": [
+            {
+              "properties": {
+                "formation": {
+                  "items": {
+                    "properties": {
+                      "children": {
+                        "anyOf": [
+                          {
+                            "items": {},
+                            "type": "array"
+                          },
+                          {
+                            "const": "null",
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "title": "Children"
+                      },
+                      "name": {
+                        "title": "Name",
+                        "type": "string"
+                      },
+                      "nodetype": {
+                        "enum": [
+                          "CommanderNode",
+                          "EquipNode",
+                          "PersonnelNode"
+                        ],
+                        "title": "Nodetype",
+                        "type": "string"
+                      },
+                      "position": {
+                        "anyOf": [
+                          {
+                            "maxItems": 2,
+                            "minItems": 2,
+                            "prefixItems": [
+                              {
+                                "type": "number"
+                              },
+                              {
+                                "type": "number"
+                              }
+                            ],
+                            "type": "array"
+                          },
+                          {
+                            "const": "null",
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "title": "Position"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "nodetype",
+                      "position",
+                      "children"
+                    ],
+                    "title": "Node",
+                    "type": "object"
+                  },
+                  "title": "Formation",
+                  "type": "array"
+                }
+              },
+              "required": [
+                "formation"
+              ],
+              "title": "Plan",
+              "type": "object"
+            },
+            {
+              "const": "null",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Plans of blue side."
+        },
+        "red": {
+          "anyOf": [
+            {
+              "properties": {
+                "formation": {
+                  "items": {
+                    "properties": {
+                      "children": {
+                        "anyOf": [
+                          {
+                            "items": {},
+                            "type": "array"
+                          },
+                          {
+                            "const": "null",
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "title": "Children"
+                      },
+                      "name": {
+                        "title": "Name",
+                        "type": "string"
+                      },
+                      "nodetype": {
+                        "enum": [
+                          "CommanderNode",
+                          "EquipNode",
+                          "PersonnelNode"
+                        ],
+                        "title": "Nodetype",
+                        "type": "string"
+                      },
+                      "position": {
+                        "anyOf": [
+                          {
+                            "maxItems": 2,
+                            "minItems": 2,
+                            "prefixItems": [
+                              {
+                                "type": "number"
+                              },
+                              {
+                                "type": "number"
+                              }
+                            ],
+                            "type": "array"
+                          },
+                          {
+                            "const": "null",
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "title": "Position"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "nodetype",
+                      "position",
+                      "children"
+                    ],
+                    "title": "Node",
+                    "type": "object"
+                  },
+                  "title": "Formation",
+                  "type": "array"
+                }
+              },
+              "required": [
+                "formation"
+              ],
+              "title": "Plan",
+              "type": "object"
+            },
+            {
+              "const": "null",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Plans of red side."
+        }
+      },
+      "required": [
+        "red",
+        "blue"
+      ],
+      "type": "object"
+    },
+    "strict": true
+  }

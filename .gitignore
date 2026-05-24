@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+*.html
+*.yml
+*.rdb
+【*
+all_tests.ipynb
+experiments/
+langgraph_sync.json
+langgraph.json
+test.py
+.langgraph_api
+.env
+agent_test
+main.ipynb
