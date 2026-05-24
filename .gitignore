@@ -4,6 +4,7 @@ __pycache__/
 *.html
 *.yml
 *.rdb
+.venv
 【*
 all_tests.ipynb
 experiments/
